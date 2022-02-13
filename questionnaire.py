@@ -1,9 +1,8 @@
-
 # Projet questionnaire : un petit jeu de question 
 # objectif : trouver la capitale des pays 
 
 
-# les données du questionnaire : Le pays, les villes et la bonne réponse
+# ============ données du questionnaire =============
 donnees = {
     "de la France": ["Marseille", "Nice", "Paris", "Nantes", "Paris"],
     "de l'Italie": ["Naples", "Rome", "Venise", "Turin", "Rome"],
@@ -12,7 +11,7 @@ donnees = {
 } 
 
 
-# définition de la fonction qui affiche la question et les réponses
+# =========== affiche la question et les réponses ===========
 def poser_question(pays, villes):
     print()
     print(f"QUESTION {nb_iteration + 1}: Quelle est la capitale {pays}? ")
@@ -22,14 +21,13 @@ def poser_question(pays, villes):
     return reponse
     
 
+# =========== fonction pour la gestion des erreurs ===========
 def gestion_erreurs(villes, reponse):
     # erreurs possible : 
     #   - l'utilisateur rentre une ville qui n'est pas proposé
     #   - l'utilisateur rentre un nombre
-
     for i in range(len(villes)):
         villes[i] = villes[i].lower()
-
     print()
     if reponse.lower() not in villes:
         print("Erreur: il faut choisir une des villes proposée")
@@ -38,7 +36,7 @@ def gestion_erreurs(villes, reponse):
         return reponse
 
 
-# définition de la fonction qui affiche si c'est une bonne ou mauvaise réponse
+# =========== affiche bonne ou mauvaise réponse =============
 # elle gère également le l'itération du score
 def afficher_resultat(reponse, bonne_reponse):
     global score
@@ -50,16 +48,14 @@ def afficher_resultat(reponse, bonne_reponse):
         print("Mauvaise réponse")
     print()
 
-
-
-        
     
+# ========= score =========
+score = 0 # variable qui alimentera 'score'
+nb_iteration = 0 # variable qui alimentera 'nb_iteration'
 
 
-score = 0
-nb_iteration = 0 
-
-# une boucle sur le dictionnaires 'donnees'
+# ======== boucle sur le dictionnaires 'donnees' ========
+# ========== appel des différentes fonctions ============
 for keys, values in donnees.items():
     reponse = poser_question(keys, values[0:4])
     afficher_resultat(reponse, values[-1])
