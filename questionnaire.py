@@ -25,11 +25,13 @@ def poser_question(pays, villes):
 def gestion_erreurs(villes, reponse):
     # erreurs possible : 
     #   - l'utilisateur rentre une ville qui n'est pas proposé
+    #   - l'utilisateur rentre un nombre
+
     for i in range(len(villes)):
         villes[i] = villes[i].lower()
 
+    print()
     if reponse.lower() not in villes:
-        print
         print("Erreur: il faut choisir une des villes proposée")
         return poser_question(keys, values[0:4])
     else:
