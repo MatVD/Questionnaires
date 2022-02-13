@@ -14,10 +14,10 @@ donnees = {
 # =========== affiche la question et les réponses ===========
 def poser_question(pays, villes):
     print()
-    print(f"QUESTION {nb_iteration + 1}: Quelle est la capitale {pays}? ")
+    print(f"QUESTION: Quelle est la capitale {pays}? ")
     print(*villes)
     reponse = input("Votre réponse: ")
-    reponse = gestion_erreurs(values[0:4], reponse)
+    reponse = gestion_erreurs(villes, reponse)
     return reponse
     
 
@@ -49,10 +49,8 @@ def afficher_resultat(reponse, bonne_reponse):
     print()
 
     
-# ========= score =========
 score = 0 # variable qui alimentera 'score'
 nb_iteration = 0 # variable qui alimentera 'nb_iteration'
-
 
 # ======== boucle sur le dictionnaires 'donnees' ========
 # ========== appel des différentes fonctions ============
