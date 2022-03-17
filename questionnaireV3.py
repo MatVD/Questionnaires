@@ -1,5 +1,13 @@
 # Questionnaire version 3 - orientée objet
 
+class Questionnaire:
+    def __init__(self, questions):
+        self.questions = questions
+        
+    def lancer_questionnaire(self):
+        for question in self.questions:
+            question.affichage()
+
 
 class Question:
 
@@ -36,6 +44,7 @@ liste_questions = [
     Question("Quelle est la capitale de l'Espagne? ", ("Barcelone", "Madrid", "Salou", "Seville"), "Madrid"),
 ]
 
-for question in liste_questions:
-    question.affichage()
+questionnaire1 = Questionnaire(liste_questions)
+questionnaire1.lancer_questionnaire()
+
 
