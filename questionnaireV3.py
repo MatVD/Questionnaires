@@ -1,7 +1,11 @@
+
+# ======================================= #
 # Questionnaire version 3 - orientée objet
+# ======================================= #
 
 
 
+# ======================================= #
 class Questionnaire:
     def __init__(self, questions):
         self.questions = questions
@@ -12,6 +16,7 @@ class Questionnaire:
 
 
 
+# ======================================= #
 class Question:
     NB_QUESTIONS = 0
     SCORE = 0
@@ -51,6 +56,12 @@ class Question:
             print("Erreur: Votre réponse ne correspond pas aux propositions")
 
 
+
+
+# ======================================= #
+# Data du questionnaire
+# ======================================= #
+
 # liste_questions = [
 #     Question("Quelle est la capitale de la France? ", ["Nantes", "Lyon", "Paris", "Marseille"], "Paris"),
 #     Question("Quelle est la capitale de l'Italie? ", ["Turin", "Naples", "Rome", "Venise"], "Rome"),
@@ -59,6 +70,8 @@ class Question:
 
 # questionnaire1 = Questionnaire(liste_questions)
 # questionnaire1.lancer_questionnaire()
+
+
 
 '''
 Afin de simplifier le lancement du questionnaire 
