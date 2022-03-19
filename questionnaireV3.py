@@ -1,6 +1,5 @@
 # Questionnaire version 3 - orientée objet
 
-from operator import index
 
 
 class Questionnaire:
@@ -12,8 +11,8 @@ class Questionnaire:
             question.affichage()
 
 
-class Question:
 
+class Question:
     NB_QUESTIONS = 0
     SCORE = 0
 
@@ -52,15 +51,27 @@ class Question:
             print("Erreur: Votre réponse ne correspond pas aux propositions")
 
 
+# liste_questions = [
+#     Question("Quelle est la capitale de la France? ", ["Nantes", "Lyon", "Paris", "Marseille"], "Paris"),
+#     Question("Quelle est la capitale de l'Italie? ", ["Turin", "Naples", "Rome", "Venise"], "Rome"),
+#     Question("Quelle est la capitale de l'Espagne? ", ["Barcelone", "Madrid", "Salou", "Seville"], "Madrid"),
+# ]
+
+# questionnaire1 = Questionnaire(liste_questions)
+# questionnaire1.lancer_questionnaire()
+
+'''
+Afin de simplifier le lancement du questionnaire 
+au lieu d'avoir l'implémenatation ci-dessus,
+je peux utiliser celle ci-dessous.
+'''
 
 
-liste_questions = [
+Questionnaire(
+    [
     Question("Quelle est la capitale de la France? ", ["Nantes", "Lyon", "Paris", "Marseille"], "Paris"),
     Question("Quelle est la capitale de l'Italie? ", ["Turin", "Naples", "Rome", "Venise"], "Rome"),
     Question("Quelle est la capitale de l'Espagne? ", ["Barcelone", "Madrid", "Salou", "Seville"], "Madrid"),
-]
-
-questionnaire1 = Questionnaire(liste_questions)
-questionnaire1.lancer_questionnaire()
-
+    ]
+).lancer_questionnaire()
 
