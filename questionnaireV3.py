@@ -29,6 +29,7 @@ class Question:
     def affichage(self):
         print()
         print(f"Question {Question.NB_QUESTIONS + 1}: {self.titre_question}")
+        print("Veuillez entrer le nom de la ville ")
         for i in range(len(self.choix_de_reponse)):
             print(f"{i+1} - {self.choix_de_reponse[i]}")
         self.reponse = input("Votre réponse: ")
@@ -45,6 +46,7 @@ class Question:
             print("Bonne réponse !")
         else: 
             print("Mauvaise réponse !")
+            print(f"La réponse était {self.bonne_reponse}")
         print(f"Votre score est de {Question.SCORE}/{Question.NB_QUESTIONS}")
         print()
 
